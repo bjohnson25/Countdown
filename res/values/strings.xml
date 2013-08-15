@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Countdown</string>
+    <string name="help"><b>What is this game?</b>\nThis game gives you ten randomly selected letters each round, 
+        from which you must make the longest word you can. 
+         Your score for the round will directly correspond to the number of letters in the word (1 point per letter).\n\nThe letter selection for each round consists of four vowels and six constonants - the frequency with which each letter appears corresponds to the frequency with which the letters appear in the English language.
+         <b>\n\nHow many rounds per game?</b>\nThere are 8 rounds per game.
+         <b>\n\nMy game is going badly - can I start a new game?</b>\nYou may start a new game at any point during an unfinished game by selecting the new game option.
+         <b>\n\nWill my progress be saved if I turn my phone off?</b>\Yes, your progress is saved when the application is exited. 
+         <b>\n\nHow do I share this game with my friends?</b>\nYou can share the game by pressing the \'Share\' button on the action bar and selecting your preferred application for sharing.
+         </string>
+
+</resources>
