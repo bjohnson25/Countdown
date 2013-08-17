@@ -5,10 +5,11 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="17" />
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
 
     <application
+        android:name="uk.co.bjoh.countdown.CountdownApplication"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/MyTheme" >
@@ -22,27 +23,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="uk.co.bjoh.countdown.MainMenu"
+            android:name="uk.co.bjoh.countdown.MenuActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="uk.co.bjoh.countdown.GameScreen"
+            android:name="uk.co.bjoh.countdown.LettersRoundActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="uk.co.bjoh.countdown.ResultsScreen"
+            android:name="uk.co.bjoh.countdown.ResultsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-        <!--activity
-            android:name="uk.co.bjoh.countdown.Help"
+        <activity
+            android:name="uk.co.bjoh.countdown.ConundrumActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
-        </activity-->
+        </activity>
         <activity
-            android:name="uk.co.bjoh.countdown.Stats"
+            android:name="uk.co.bjoh.countdown.StatsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
