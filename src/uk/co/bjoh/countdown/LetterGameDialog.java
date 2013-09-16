@@ -14,7 +14,7 @@ public class LetterGameDialog extends DialogFragment {
         builder.setTitle("tralalala")
                .setPositiveButton("Go!", new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
-                	 LettersRoundActivity.setDialog(true);  
+//                	 LettersRoundActivity.setDialog(true);  
                    }
                })
                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

@@ -31,7 +31,7 @@ public class ConundrumActivity extends Activity implements OnClickListener {
 	 */
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.game);
+		setContentView(R.layout.conundrum);
 		Bundle b = getIntent().getExtras();
 		fullGame = b.getBoolean("fullGame");
 		for (int i = 0; i < letters.length; i++) {
@@ -78,6 +78,14 @@ public class ConundrumActivity extends Activity implements OnClickListener {
 		clear.setOnClickListener(this);
 		submit.setOnClickListener(this);
 
+		// Start the game
+		startTimer();
+	}
+
+	/*
+	 * Starts the game and provides intent for end of round
+	 */
+	private void startTimer() {
 		cdTimer = new CountDownTimer(30000, 1000) {
 
 			public void onTick(long millisUntilFinished) {
@@ -111,7 +119,6 @@ public class ConundrumActivity extends Activity implements OnClickListener {
 
 			}
 		}.start();
-
 	}
 
 	@Override
@@ -158,6 +165,9 @@ public class ConundrumActivity extends Activity implements OnClickListener {
 		}
 	}
 
+	/*
+	 * Clears the current attempt and re-enables buttons
+	 */
 	private void clear() {
 		currentAttemptString = "";
 		guess.setText(currentAttemptString);

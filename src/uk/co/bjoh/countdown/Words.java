@@ -8,7 +8,7 @@ import java.util.Random;
 public class Words {
 	String[] letters;
 	String conundrum;
-	
+
 	private String[] consArr = { "R", "S", "K", "L", "D", "L", "T", "V", "W",
 			"X", "L", "L", "D", "H", "J", "L", "N", "N", "N", "Z", "P", "T",
 			"B", "C", "T", "P", "Q", "R", "D", "F", "G", "S", "C", "D", "Y",
@@ -55,29 +55,38 @@ public class Words {
 		return letters;
 	}
 
-	public void setConundrum(){
+	public void setConundrum() {
 		Random r = new Random();
 		int i = r.nextInt(CountdownApplication.conundrums.length);
 		conundrum = CountdownApplication.conundrums[i];
 	}
-	
-	public String getConundrum(){
+
+	public String getConundrum() {
 		return conundrum;
 	}
 	
+	/*
+	 * Return all letters for word game
+	 */
 	public String[] getLetters() {
 		return letters;
 	}
 
+	/*
+	 * Return letter i for a word game
+	 */
 	public String getLetter(int i) {
 		return letters[i];
 	}
 
+	/*
+	 * Return letter i for a conundrum 
+	 */
 	public String getConundrumLetter(int i) {
 		String[] conundrumLetters = new String[8];
 		conundrumLetters = conundrum.split("");
 
-		return conundrumLetters[i+1];
+		return conundrumLetters[i + 1];
 	}
 
 }

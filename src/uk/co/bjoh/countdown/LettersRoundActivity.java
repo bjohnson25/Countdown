@@ -29,14 +29,15 @@ public class LettersRoundActivity extends Activity implements OnClickListener {
 	SharedPreferences prefs;
 	CountDownTimer cdTimer;
 	Words w;
-	static boolean dialogGone;
+
+	// static boolean dialogGone;
 	/**
 	 * Called when the activity is first created.
 	 */
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.game);
-		
+
 		for (int i = 0; i < letters.length; i++) {
 			String buttonID = "bLetter" + (i + 1);
 			int resID = getResources().getIdentifier(buttonID, "id",
@@ -76,11 +77,11 @@ public class LettersRoundActivity extends Activity implements OnClickListener {
 		clear.setOnClickListener(this);
 		submit.setOnClickListener(this);
 
-		LetterGameDialog lgd = new LetterGameDialog();
-		lgd.show(getFragmentManager(), "");
-		if(dialogGone){
-			startTimer();
-		}
+		// LetterGameDialog lgd = new LetterGameDialog();
+		// lgd.show(getFragmentManager(), "");
+		// if(dialogGone){
+		startTimer();
+		// }
 
 	}
 
@@ -170,6 +171,9 @@ public class LettersRoundActivity extends Activity implements OnClickListener {
 		}
 	}
 
+	/*
+	 * Clears the current attempt and re-enables buttons
+	 */
 	private void clear() {
 		currentAttemptString = "";
 		guess.setText(bestGuess);
@@ -181,9 +185,8 @@ public class LettersRoundActivity extends Activity implements OnClickListener {
 	public static int searchDict(String bestGuess) {
 		return Arrays.binarySearch(CountdownApplication.dictionary, bestGuess);
 	}
-	
-	public static void setDialog(boolean b){
-		dialogGone = b;
 
-	}
+	// public static void setDialog(boolean b){
+	// dialogGone = b;
+	// }
 }
