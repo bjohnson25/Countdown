@@ -94,29 +94,8 @@ public class ConundrumActivity extends Activity implements OnClickListener {
 			}
 
 			public void onFinish() {
-
 				timer.setText("Done! Verifying word...");
-				int score = 0;
-				Intent a = new Intent(ConundrumActivity.this,
-						ResultsActivity.class);
-
-				if (currentAttemptString.equals(w.getConundrum())) {
-					score = 10;
-				}
-				if (fullGame) {
-					overallScore += score;
-					SharedPreferences.Editor editor = prefs.edit();
-					editor.putInt("round", curRound);
-					editor.putInt("overall", overallScore);
-					editor.commit();
-					Bundle b = new Bundle();
-					b.putString("best", currentAttemptString);
-					b.putInt("score", score);
-					a.putExtras(b);
-					startActivity(a);
-					finish();
-				}
-
+				endGame();
 			}
 		}.start();
 	}
@@ -143,7 +122,7 @@ public class ConundrumActivity extends Activity implements OnClickListener {
 		case R.id.bSubmit:
 
 			if (currentAttemptString.equals(w.getConundrum())) {
-				finish();
+				endGame();
 			} else {
 				// clear method
 				clear();
@@ -176,4 +155,33 @@ public class ConundrumActivity extends Activity implements OnClickListener {
 		}
 	}
 
+	/*
+	 * 
+	 */
+	private void endGame() {
+
+		int score = 0;
+
+		if (currentAttemptString.equals(w.getConundrum())) {
+			score = 10;
+		}
+		
+		if (fullGame) {
+			overallScore += score;
+			Intent a = new Intent(ConundrumActivity.this, ResultsActivity.class);
+			SharedPreferences.Editor editor = prefs.edit();
+			editor.putInt("round", curRound);
+			editor.putInt("overall", overallScore);
+			editor.commit();
+			Bundle b = new Bundle();
+			b.putString("best", currentAttemptString);
+			b.putInt("score", score);
+			a.putExtras(b);
+			startActivity(a);
+			finish();
+		} else {
+			// TODO add a dialog or something similar
+			finish();
+		}
+	}
 }
